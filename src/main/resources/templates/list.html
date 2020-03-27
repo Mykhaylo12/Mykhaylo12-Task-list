@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{fragments/main_layout}">
+<head>
+    <title>Index Page</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link href="https://getbootstrap.com/docs/4.0/examples/signin/signin.css" rel="stylesheet" crossorigin="anonymous"/>
+</head>
+<body>
+<div layout:fragment="content" class="container mySpace">
+    <div class="card">
+        <div class="card card-body">
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th>Task description</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="task:${tasks}">
+                    <td th:text="${task.description}"></td>
+                    <td><a th:href="@{/deleteTask(task=${task.description})}" class="btn btn-dark">delete</a></td>
+                    <td><a th:href="@{/editTask(task=${task.description})}" class="btn btn-dark">edit</a></td>
+                </tr>
+                </tbody>
+                <td><a href="/addTask" class="btn btn-dark">AddTask</a></td>
+                <td><a href="/logout" class="btn btn-dark">Logout</a></td>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+
+
