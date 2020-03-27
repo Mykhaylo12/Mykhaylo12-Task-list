@@ -36,7 +36,7 @@ Open the project in your IDE.
 
 Add sdk 11.0.3 in project structure.
 
-Change a path in C:/Users/user/Desktop/task-list/application.log. It has to reach your logFile.
+Set yours appropriate properties in application.properties file.
 
 Run the project.
  
